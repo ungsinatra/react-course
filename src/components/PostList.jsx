@@ -8,7 +8,6 @@ const PostList = ({ posts, title }) => {
         <div>
             <h1 className="header__title">{title}</h1>
             {posts.map(post => {
-                console.log(post)
                 return <PostItem post={post} key={post.id} />
             })}
         </div>
