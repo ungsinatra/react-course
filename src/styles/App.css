@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#root{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App{
+    width: 800px;
+ 
+    
+}
+
+
+.post{
+    margin-top: 15px;
+    padding:10px 5px 10px 5px;
+    max-width:800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid rgb(15, 197, 127);
+}
+
+.post__title{
+    margin: 0;
+}
+
+.header__title{
+    text-align: center;
+}
