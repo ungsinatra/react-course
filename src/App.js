@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Clock from "./components/Clock";
 // import { ReactDOM } from "react";
 // import Counter from "./components/Counter";
 import PostItem from "./components/PostItem";
@@ -17,7 +18,7 @@ function App() {
 
 
   const [title,setTitle] = useState('');
-  const [decs,setDesc] = useState('');
+  const [desc,setDesc] = useState('');
 
   const titleHandler = (evt) => {
     setTitle(evt.target.value);
@@ -25,7 +26,22 @@ function App() {
 
   const decsHandler = (evt) => {
     setDesc(evt.target.value)
-    console.log(decs)
+  }
+
+
+  const addPost = (evt) => {
+    evt.preventDefault();
+    const newPost = {
+      id:Date.now(),
+      title,
+      desc
+    }
+
+    console.log(newPost);
+    setPosts([...posts,newPost]);
+    setTitle('');
+    setDesc('');
+
   }
 
   return (
@@ -39,12 +55,12 @@ function App() {
       
       />
       <MyInput 
-      value = {decs}
+      value = {desc}
       type = 'text' 
       placeholder="Описание поста" 
       onChange = {decsHandler}
       />  
-      <MyButton  type="button">Создать пост</MyButton>
+      <MyButton   onClick = {addPost} type="submit">Создать пост</MyButton>
       </form>
 
     
@@ -52,6 +68,11 @@ function App() {
  
     </div>
   );
+
+  // return(
+  //   <Clock />
+
+  // )
 }
 
 export default App;
